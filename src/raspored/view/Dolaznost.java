@@ -157,6 +157,7 @@ public class Dolaznost extends javax.swing.JFrame {
 
     private Student napuniObjekt(Student s){
         s.setBrojDolaznosti(Integer.parseInt((String)cmbSati.getSelectedItem()));
+        //Vjerojatno je i ovo greška..
         s.setPredmeti((List<Predmet>) cmbStudent.getItemAt(cmbStudent.getSelectedIndex()));
 
         return s;

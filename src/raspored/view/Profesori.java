@@ -61,6 +61,7 @@ public class Profesori extends javax.swing.JFrame {
         p.setOib(Integer.parseInt(txtOib.getText()));
         p.setIme(txtIme.getText());
         p.setPrezime(txtPrezime.getText());
+        //Pukne zbog linije 65
         p.setPredmeti((List<Predmet>) cmbPredmet.getItemAt(cmbPredmet.getSelectedIndex()));
         return p;
     }

@@ -48,6 +48,8 @@ public class Studenti extends javax.swing.JFrame {
         s.setIme(txtIme.getText());
         s.setPrezime(txtPrezime.getText());
         s.setBrojIndexa(txtIndeks.getText());
+        //Pukne zbog linije 53//
+        //Ne znam kako drugačije napisat ovo!!
         s.setPredmeti((List<Predmet>) cmbPredmet1.getItemAt(cmbPredmet1.getSelectedIndex()));
 
         return s;
