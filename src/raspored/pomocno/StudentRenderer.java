@@ -26,7 +26,7 @@ public class StudentRenderer extends JLabel implements ListCellRenderer<Student>
         String s = student.getIme()+ "                                   ";
         setOpaque(true);
        
-        setText(s.substring(0,25) + "|        " +  student.getPrezime().toString() );
+        setText(s.substring(0,25) + "|        " +  student.getPrezime().toString() + "  :   " + student.getBrojDolaznosti());
         if(isSelected){
             setBackground(Color.GREEN);
         }else{

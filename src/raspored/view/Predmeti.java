@@ -103,7 +103,7 @@ public class Predmeti extends javax.swing.JFrame {
         });
 
         btnPromjeni.setBackground(new java.awt.Color(0, 0, 0));
-        btnPromjeni.setForeground(new java.awt.Color(0, 0, 255));
+        btnPromjeni.setForeground(new java.awt.Color(153, 153, 255));
         btnPromjeni.setText("Promjeni");
         btnPromjeni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

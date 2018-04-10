@@ -92,6 +92,10 @@ public class Student implements Serializable {
     public void setPostotak(BigDecimal postotak) {
         this.postotak = postotak;
     }
+    
+    public void addPredmet(Predmet predmet){
+        this.predmeti.add(predmet);
+    }
 
     @Override
     public String toString() {

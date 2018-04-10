@@ -62,7 +62,6 @@ public class Godine extends javax.swing.JFrame {
         cmbSmjer = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(436, 345));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -91,7 +90,7 @@ public class Godine extends javax.swing.JFrame {
         });
 
         btnPromjeni.setBackground(new java.awt.Color(0, 0, 0));
-        btnPromjeni.setForeground(new java.awt.Color(0, 0, 255));
+        btnPromjeni.setForeground(new java.awt.Color(153, 153, 255));
         btnPromjeni.setText("Promjeni");
         btnPromjeni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -85,8 +85,8 @@ public class Profesor implements Serializable {
        return getIme();
     }
 
-    public void setPredmet(Predmet itemAt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addPredmet(Predmet itemAt) {
+       this.predmeti.add(itemAt);
     }
   
 }

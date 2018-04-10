@@ -56,6 +56,8 @@ public class Dolaznost extends javax.swing.JFrame {
         lista = new javax.swing.JList<>();
         btnBack = new javax.swing.JButton();
         cmbStudent = new javax.swing.JComboBox<>();
+        btnObrisi = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -86,37 +88,66 @@ public class Dolaznost extends javax.swing.JFrame {
             }
         });
 
+        btnObrisi.setBackground(new java.awt.Color(0, 0, 0));
+        btnObrisi.setForeground(new java.awt.Color(255, 0, 0));
+        btnObrisi.setText("Obriši broj sati");
+        btnObrisi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnObrisiActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jLabel1.setText("DOLAZNOST");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnDodaj, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                    .addComponent(btnBack)
-                    .addComponent(cmbSati, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(cmbStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnObrisi)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDodaj))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cmbStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cmbSati, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBack)
+                .addGap(95, 95, 95))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cmbSati, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                            .addComponent(cmbStudent))
-                        .addGap(49, 49, 49)
-                        .addComponent(btnDodaj)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                        .addComponent(btnBack)))
-                .addContainerGap())
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbSati, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnObrisi)
+                    .addComponent(btnDodaj))
+                .addGap(18, 18, 18)
+                .addComponent(btnBack)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,15 +176,27 @@ public class Dolaznost extends javax.swing.JFrame {
         if(odabraniStudent == null){
             return;
         }  
-       Student s = null;
-       Predmet p = null;
-       s.setPostotak(new BigDecimal(s.getBrojDolaznosti()/p.getBrojSati()));
+       
+       //s.setPostotak(new BigDecimal(s.getBrojDolaznosti()/p.getBrojSati()));
     }//GEN-LAST:event_listaValueChanged
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
 
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnObrisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObrisiActionPerformed
+
+        resetirajGreske();
+        if (!kontrola()) {
+            return;
+        }
+        Student s = lista.getSelectedValue();
+        s.setBrojDolaznosti(s.getBrojDolaznosti() - Integer.parseInt(cmbSati.getSelectedItem().toString()));
+        
+        obrada.save(s);
+        ucitajPodatke();
+    }//GEN-LAST:event_btnObrisiActionPerformed
 
     private Student napuniObjekt(Student s){
         s.setBrojDolaznosti(Integer.parseInt((String)cmbSati.getSelectedItem()));
@@ -182,10 +225,7 @@ public class Dolaznost extends javax.swing.JFrame {
 
         List<Student> lista = HibernateUtil.getSession().createQuery(
                 "from Student").list();
-        
-        List<Predmet> lista2 = HibernateUtil.getSession().createQuery(
-                "from Predmet").list();
-
+       
         for (Student s : lista) {
             model.addElement(s);
         }
@@ -196,14 +236,17 @@ public class Dolaznost extends javax.swing.JFrame {
     private boolean kontrola() {
         Student s = lista.getSelectedValue();
         if (s == null) {
-            JOptionPane.showMessageDialog(getRootPane(), "Prvo odaberite stavku");
+            JOptionPane.showMessageDialog(getRootPane(), "Prvo odaberite studenta");
             return false;
         }
         if (cmbSati.getSelectedItem()== null){
             JOptionPane.showMessageDialog(getRootPane(), "Nisi odabrao broj sati");
             return false;
         }
-        
+        if (cmbStudent.getSelectedItem()== null){
+            JOptionPane.showMessageDialog(getRootPane(), "Nisi odabrao predmet");
+            return false;
+        }
         return true;
         
     } 
@@ -220,8 +263,10 @@ public class Dolaznost extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDodaj;
+    private javax.swing.JButton btnObrisi;
     private javax.swing.JComboBox<String> cmbSati;
     private javax.swing.JComboBox<Predmet> cmbStudent;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<Student> lista;
     // End of variables declaration//GEN-END:variables

@@ -62,7 +62,8 @@ public class Profesori extends javax.swing.JFrame {
         p.setIme(txtIme.getText());
         p.setPrezime(txtPrezime.getText());
         //Pukne zbog linije 65
-        p.setPredmeti((List<Predmet>) cmbPredmet.getItemAt(cmbPredmet.getSelectedIndex()));
+        Predmet predmet = cmbPredmet.getItemAt(cmbPredmet.getSelectedIndex());
+        p.addPredmet(predmet);
         return p;
     }
     
@@ -159,7 +160,7 @@ public class Profesori extends javax.swing.JFrame {
         });
 
         btnPromjeni.setBackground(new java.awt.Color(0, 0, 0));
-        btnPromjeni.setForeground(new java.awt.Color(0, 0, 255));
+        btnPromjeni.setForeground(new java.awt.Color(153, 153, 255));
         btnPromjeni.setText("Promjeni");
         btnPromjeni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

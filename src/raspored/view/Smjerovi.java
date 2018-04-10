@@ -105,7 +105,7 @@ public class Smjerovi extends javax.swing.JFrame {
         });
 
         btnPromjeniSmjer.setBackground(new java.awt.Color(0, 0, 0));
-        btnPromjeniSmjer.setForeground(new java.awt.Color(0, 0, 255));
+        btnPromjeniSmjer.setForeground(new java.awt.Color(153, 153, 255));
         btnPromjeniSmjer.setText("Promjeni");
         btnPromjeniSmjer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -185,11 +185,12 @@ public class Smjerovi extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addComponent(txtDodajOpis, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPromjeniSmjer)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDodajSmjer)
-                    .addComponent(btnObrisiSmjer)
-                    .addComponent(btnBack))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnPromjeniSmjer)
+                        .addComponent(btnObrisiSmjer)
+                        .addComponent(btnBack)))
                 .addGap(0, 12, Short.MAX_VALUE))
         );
 
