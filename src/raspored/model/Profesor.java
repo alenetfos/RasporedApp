@@ -28,7 +28,7 @@ public class Profesor implements Serializable {
     @GeneratedValue
     private int idProfesor;
     private String ime;
-    private int oib;
+    private String oib;
     private String prezime;
     
 
@@ -56,11 +56,11 @@ public class Profesor implements Serializable {
         this.idProfesor = idProfesor;
     }
 
-    public int getOib() {
+    public String getOib() {
         return oib;
     }
 
-    public void setOib(int oib) {
+    public void setOib(String oib) {
         this.oib = oib;
     }
 

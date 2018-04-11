@@ -58,10 +58,9 @@ public class Profesori extends javax.swing.JFrame {
     }
 
     private Profesor napuniObjekt(Profesor p) {
-        p.setOib(Integer.parseInt(txtOib.getText()));
+        p.setOib(txtOib.getText());
         p.setIme(txtIme.getText());
         p.setPrezime(txtPrezime.getText());
-        //Pukne zbog linije 65
         Predmet predmet = cmbPredmet.getItemAt(cmbPredmet.getSelectedIndex());
         p.addPredmet(predmet);
         return p;
@@ -335,14 +334,13 @@ public class Profesori extends javax.swing.JFrame {
 
     private void btnIzbrisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIzbrisiActionPerformed
 
-        resetirajGreske();
-        if (!kontrola()) {
+        Profesor p = lista.getSelectedValue();
+        if (p == null) {
+            JOptionPane.showMessageDialog(getRootPane(), "Prvo odaberite stavku");
             return;
         }
         
-        Profesor p = new Profesor();
-        p = napuniObjekt(p);
-        obrada.save(p);
+        obrada.delete(p);
         ucitajPodatke();
     }//GEN-LAST:event_btnIzbrisiActionPerformed
 
